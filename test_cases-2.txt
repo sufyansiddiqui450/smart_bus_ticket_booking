@@ -1,0 +1,74 @@
+SMART BUS TICKET BOOKING SYSTEM — TEST CASES
+================================================
+
+Run these tests through the main menu. Start with a fresh notebook kernel
+and run the project code cells in order when you want a clean initial state.
+
+TC01 — View routes
+Steps: Choose menu option 1.
+Expected: Routes with available seats are displayed.
+
+TC02 — Search for an existing route
+Steps: Choose option 2; enter R101.
+Expected: Route R101 details are displayed.
+
+TC03 — Search for a missing route
+Steps: Choose option 2; enter UNKNOWN.
+Expected: "No matching route found."
+
+TC04 — Successful booking
+Steps: Choose option 3; name Ahmed; age 24; route R101; seats 2.
+Expected: Booking is confirmed, total fare is Rs. 2400, and R101 available seats decrease from 40 to 38.
+
+TC05 — Blank passenger name
+Steps: Choose option 3; leave passenger name blank.
+Expected: Error message; no booking is created and no seats are changed.
+
+TC06 — Invalid age
+Steps: Choose option 3; enter age as text such as "abc".
+Expected: Error message; no booking is created and no seats are changed.
+
+TC07 — Non-positive seat count
+Steps: Choose option 3; use a valid name, age and route; enter 0 seats.
+Expected: Error message; no booking is created and no seats are changed.
+
+TC08 — More seats than available
+Steps: Choose option 3; request more seats than the route's available seats.
+Expected: Error message; no booking is created and no seats are changed.
+
+TC09 — View bookings
+Steps: Choose option 4 after a successful booking.
+Expected: The booking ID, passenger, route, seats, fare and Confirmed status are displayed.
+
+TC10 — Successful cancellation
+Steps: Choose option 5; enter the ID of a Confirmed booking.
+Expected: Status changes to Cancelled and the booked seats are restored once.
+
+TC11 — Prevent double cancellation
+Steps: Choose option 5 again; enter the same booking ID.
+Expected: Error message that the booking is already cancelled; seats do not increase again.
+
+TC12 — Booking report
+Steps: Choose option 7 after booking and cancellation tests.
+Expected: Total records include cancelled bookings; confirmed revenue and reserved seats include only Confirmed bookings.
+
+TC13 — Seat availability
+Steps: Choose option 6.
+Expected: Each route's available seats, total seats and status are displayed.
+
+TC14 — Route schedule
+Steps: Choose option 8.
+Expected: Routes are grouped by departure city; cities without departures show "No scheduled departures."
+
+TC15 — Invalid menu choice
+Steps: At the main menu enter 0 or 99.
+Expected: Invalid-choice message; the menu appears again.
+
+TC16 — Exit
+Steps: Choose option 9.
+Expected: A goodbye message appears and the menu loop ends.
+
+Notes:
+- The menu currently has 9 options because Route Schedule was added as option 8.
+- Booking data is stored in memory only and is lost when the program/kernel is restarted.
+- Record actual results and mark each test PASS or FAIL during the demonstration.
